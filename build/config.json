@@ -1,0 +1,8 @@
+{
+  "environments": {
+    "web": ["mysqld", "httpd"],
+    "mobile": ["mobile_command1", "mobile_command2"],
+    "python": ["python_command1", "python_command2"]
+  },
+  "common_command": "wt -d C:\\Users\\Kira77\\Documents\\dev"
+}
