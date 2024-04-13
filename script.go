@@ -9,6 +9,7 @@ import (
 	"path/filepath"
 	"runtime"
 	"sync"
+	"strconv"
 )
 
 type Config struct {
@@ -35,8 +36,14 @@ func main() {
 	}
 
 	environment := os.Args[1]
-
-	if config.CommonCommand != "" {
+	runCommonCommand := false
+	if len(os.Args) > 2 {
+		runCommonCommand, err = strconv.ParseBool(os.Args[2])
+		if err != nil {
+			log.Fatal("Le deuxième argument doit être un booléen.")
+		}
+	}
+	if runCommonCommand  && config.CommonCommand != "" {
 		err := runCommand(config.CommonCommand, nil)
 		if err != nil {
 			log.Fatalf("Erreur lors de l'exécution de la commande commune: %v", err)

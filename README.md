@@ -14,7 +14,7 @@ DevScript is a versatile command-line tool written in Go that streamlines the se
 To build the DevScript executable, run the following command:
 
 ```bash
-go build ./script.go
+
 ```
 
 ## Configuration
